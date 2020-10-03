@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VagaFPF", "VagaFPF.csproj", "{787D37A0-A0BB-4869-907F-2E33A41CBE21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VagaFPF.Tests", "..\VagaFPF.Tests\VagaFPF.Tests.csproj", "{C997A50C-0BE6-4851-855C-9FDD0B7C3AD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{787D37A0-A0BB-4869-907F-2E33A41CBE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{787D37A0-A0BB-4869-907F-2E33A41CBE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{787D37A0-A0BB-4869-907F-2E33A41CBE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{787D37A0-A0BB-4869-907F-2E33A41CBE21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C997A50C-0BE6-4851-855C-9FDD0B7C3AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C997A50C-0BE6-4851-855C-9FDD0B7C3AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C997A50C-0BE6-4851-855C-9FDD0B7C3AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C997A50C-0BE6-4851-855C-9FDD0B7C3AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5C10075-2069-464D-B8E5-612B29CEB9AC}
+	EndGlobalSection
+EndGlobal

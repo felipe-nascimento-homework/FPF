@@ -1,0 +1,65 @@
+﻿@model IEnumerable<VagaFPF.Models.Rule>
+
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Departamentos</h2>
+
+
+<div class="text-right">
+    <a href="/Rules/Create" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-plus"></i></a>
+</div>
+
+</br>
+
+
+@using (Html.BeginForm("Pesquisar", "Rules", FormMethod.Post))
+{
+    <p>
+        Nome: <input type="text" name="name" asp-for="Pesquisar" />
+        <input type="submit" value="Pesquisar" />
+    </p>
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Modificado em
+        </th>
+        <th>
+            Ativo
+        </th>
+        <th>
+            Ações
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modified_at)
+
+            </td>
+            <td>
+                @Html.CheckBox("isActive", item.active == "A" ? true : false)
+
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.RuleID }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.RuleID })
+            </td>
+        </tr>
+    }
+
+</table>

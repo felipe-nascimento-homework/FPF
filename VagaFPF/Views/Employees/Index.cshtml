@@ -1,0 +1,75 @@
+﻿@model IEnumerable<VagaFPF.Models.Employee>
+
+@{
+    ViewBag.Title = "Funcionários";
+}
+
+<h2>Funcionários</h2>
+
+
+<div class="text-right">
+    <a href="/Employees/Create" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-plus"></i></a>
+</div>
+
+</br>
+
+
+@using (Html.BeginForm("Pesquisar", "Employees", FormMethod.Post))
+{
+    <p>
+        Nome: <input type="text" name="name" asp-for="Pesquisar" />
+        <input type="submit" value="Pesquisar" />
+    </p>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+           Nome
+        </th>
+        <th>
+           Sexo
+        </th>
+        <th>
+           Modificado em
+        </th>
+        <th>
+           Ativo
+        </th>
+        <th>
+           Ações
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @if (item.gender == "M")
+                {
+                    @: Masculino
+                }
+                else
+                {
+                    @: Feminino
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modified_at)
+            </td>
+            <td>
+                @Html.CheckBox("isActive", item.active == "A" ? true : false)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.EmployeeID }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.EmployeeID })
+            </td>
+        </tr>
+    }
+
+</table>
