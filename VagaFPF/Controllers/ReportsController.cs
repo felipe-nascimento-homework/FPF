@@ -15,16 +15,7 @@ namespace VagaFPF.Controllers
         // GET: Reports
         public ActionResult Index()
         {
-            
-            List<RelatorioDTO> resultado = db.Employees
-                .GroupBy(g => g.RuleID)
-                .Select(s => new RelatorioDTO
-                {
-                    Departamento = s.FirstOrDefault().Rule.name,
-                    Salario = s.Sum(c => c.salary)
-                }).ToList();
-
-
+            List<RelatorioDTO> resultado = ObterTotalSalarios();
             return View(resultado);
         }
 
@@ -33,36 +24,41 @@ namespace VagaFPF.Controllers
         public JsonResult NewChart()
         {
             List<object> iData = new List<object>();
-            //Creating sample data  
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Employee", System.Type.GetType("System.String"));
-            dt.Columns.Add("Credit", System.Type.GetType("System.Int32"));
+            
+            List<RelatorioDTO> resultado = ObterTotalSalarios();
 
-            DataRow dr = dt.NewRow();
-            dr["Employee"] = "Sam";
-            dr["Credit"] = 123;
-            dt.Rows.Add(dr);
+            List<object> aLabels = new List<object>();
+            List<object> aDatasets1 = new List<object>();
 
-            dr = dt.NewRow();
-            dr["Employee"] = "Alex";
-            dr["Credit"] = 456;
-            dt.Rows.Add(dr);
-
-            dr = dt.NewRow();
-            dr["Employee"] = "Michael";
-            dr["Credit"] = 587;
-            dt.Rows.Add(dr);
-            //Looping and extracting each DataColumn to List<Object>  
-            foreach (DataColumn dc in dt.Columns)
+            foreach (RelatorioDTO item in resultado)
             {
-                List<object> x = new List<object>();
-                x = (from DataRow drr in dt.Rows select drr[dc.ColumnName]).ToList();
-                iData.Add(x);
+                aLabels.Add(item.Departamento);
+                aDatasets1.Add(item.Salario);
             }
-            //Source data returned as JSON  
+
+            if (aLabels.Count > 0) {
+                iData.Add(aLabels);
+                iData.Add(aDatasets1);
+            }
+            
+
             return Json(iData, JsonRequestBehavior.AllowGet);
         }
 
+
+
+        private List<RelatorioDTO> ObterTotalSalarios() {
+
+            List<RelatorioDTO> resultado = db.Employees
+             .GroupBy(g => g.RuleID)
+             .Select(s => new RelatorioDTO
+             {
+                 Departamento = s.FirstOrDefault().Rule.name,
+                 Salario = s.Sum(c => c.salary)
+             }).ToList();
+
+            return resultado;
+        }
 
     }
 }

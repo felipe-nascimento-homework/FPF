@@ -164,10 +164,10 @@ C:\Users\dev\Source\Repos\GitRepos\VagaFPF\bin\System.Web.WebPages.Razor.xml
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\bin\Newtonsoft.Json.xml
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\bin\Antlr3.Runtime.pdb
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\dev\Source\Repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.csprojAssemblyReference.cache
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.Migrations.Criacao_do_banco.resources
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.csproj.GenerateResource.cache
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.csproj.CoreCompileInputs.cache
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.csproj.CopyComplete
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.dll
 C:\Users\dev\Source\Repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.pdb
+C:\Users\dev\source\repos\GitRepos\VagaFPF\obj\Debug\VagaFPF.csprojAssemblyReference.cache

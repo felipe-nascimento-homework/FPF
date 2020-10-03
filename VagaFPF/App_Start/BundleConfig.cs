@@ -24,7 +24,15 @@ namespace VagaFPF
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/Chart.min.css"));
+
+             bundles.Add(new ScriptBundle("~/bundles/ChartJs").Include(
+                        "~/Scripts/Chart.min.js",
+                        "~/Scripts/Chart.bundle.min.js"
+                        ));
+
+
         }
     }
 }
